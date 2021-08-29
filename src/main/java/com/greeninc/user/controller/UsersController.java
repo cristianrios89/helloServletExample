@@ -60,7 +60,12 @@ public class UsersController {
     public ResponseEntity<UserRsDTO> retrieveUser(@PathVariable final Long userId) throws ApiException {
         return new ResponseEntity<>(this.usersService.retrieveUser(userId), HttpStatus.OK);
     }
-
+	
+	@GetMapping(path = "/test")
+    public ResponseEntity<String> retrieveTestText() {
+        return ResponseEntity.ok("Hello World from Tomcat!");
+    }
+	
     /**
      * Updates an existing user searched by id.
      *
